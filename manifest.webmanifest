@@ -1,7 +1,7 @@
 {
     "background_color": "#5A5E66",
     "theme_color": "#5A5E66",
-    "description": "Displays availabilty for meeting rooms and people",
+    "description": "Mostra a disponibilidade de Salas de Reunião e Pessoas",
     "display": "fullscreen",
     "icons": [
         {
@@ -17,8 +17,8 @@
             "purpose": "maskable"
         }
     ],
-    "name": "Meeting Room Screen",
-    "short_name": "Meeting Rooms",
+    "name": "etiquetas.io Meeting Rooms",
+    "short_name": "etiquetas.io Meeting Rooms",
     "scope": "/meeting-room-display/",
     "start_url": "/meeting-room-display/index.html"
   }
