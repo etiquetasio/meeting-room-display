@@ -15,7 +15,7 @@ let nameMonitor = urlParams.get('name'); //"Axel Karlsson"
 let icsURL = urlParams.get('icsurl'); //'https://outlook.office365.com/owa/calendar/9a94fe7204354d6088ce1fc6a54c1fc0@stenungsund.se/2ff6c8f6193c49699814159643a9969b7290947781098632186/calendar.ics'
 
 //--- Today, Dates and day of the week
-let weekDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+let weekDays = ["Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sabado", "Domingo"]
 
 let today = new Date();
 let todayWeekDay = weekDays[today.getDay()-1]
@@ -27,7 +27,7 @@ let jcalData;
 
 function getICS(){
     today = new Date();
-    console.log("Getting ICS Feed");
+    console.log("Analisando o ICS Feed");
     console.log(icsURL)
 
     $.ajax({
@@ -56,7 +56,7 @@ function getICS(){
         },
         error: function (request, status, error) {
             if(request.responseText == undefined){
-                alert("You probably have a CORS issue, To resolve this you can change the CORS header on your ICS/ICAL server (or set up a proxy server which adds a CORS header), or as a last resort disable cors entierly for this PWA")
+                alert("Erro! Você precisa instalar a extensão CORS Unblock para que o sistema funcione corretamente.")
             }else{
                 alert(request.responseText);
             }
@@ -145,7 +145,7 @@ function updateTimeToNextEvent(uppcomingEvents, activeEvents){
     if(activeEvents === undefined || activeEvents.length == 0){
         if(uppcomingEvents === undefined || uppcomingEvents.length == 0){
             p.innerHTML = "";
-            p.appendChild(document.createTextNode("Unbooked for the rest of the day"));
+            p.appendChild(document.createTextNode("Livre para o resto do dia"));
         }else{
             //-- Get start time of next uppcoming event
             dtStartKey = Object.keys(uppcomingEvents[0]).filter((key) => key.includes('DTSTART'));
@@ -154,7 +154,7 @@ function updateTimeToNextEvent(uppcomingEvents, activeEvents){
 
             p.innerHTML = "";
             timeToNextEvent = msToHM(uppcomingEventDate - today);
-            p.appendChild(document.createTextNode(timeToNextEvent + " to next booking"))
+            p.appendChild(document.createTextNode(timeToNextEvent + " LIVRE"))
         }
     }
     else{
@@ -165,7 +165,7 @@ function updateTimeToNextEvent(uppcomingEvents, activeEvents){
 
         p.innerHTML = "";
         timeEventEnd = msToHM(-(today - new Date(activeEventDate)));
-        p.appendChild(document.createTextNode(timeEventEnd + " to end of current booking"))
+        p.appendChild(document.createTextNode(timeEventEnd + " para terminar a reunião."))
     }
 }
 
@@ -197,9 +197,9 @@ function msToHM( ms ) {
     const minutes = Math.floor(seconds / 60 + 1); // 60 seconds in 1 minute
 
     if (hours == 0) {
-        return minutes + " minutes";
+        return minutes + " minutos";
     }
-    return hours+" hours "+minutes + " minutes";
+    return "Ocupada | em " +hours+" horas e "+minutes + " minutos";
     // Code from Ozil https://stackoverflow.com/users/2168733/ozil and Ronan Quillevere https://stackoverflow.com/users/1301197/ronan-quillevere
     // https://stackoverflow.com/questions/29816872/how-can-i-convert-milliseconds-to-hhmmss-format-using-javascript
 }
@@ -243,7 +243,7 @@ function displayNewUserPrompt(){
     nameLabel = document.createElement("label");
     nameLabel.setAttribute("for", "screen-name");
     nameLabel.id = "screen-name-label";
-    nameLabel.appendChild(document.createTextNode("Screen Name"));
+    nameLabel.appendChild(document.createTextNode("Nome da Sala"));
 
     nameInput = document.createElement("input");
     nameInput.type = "text";
@@ -254,7 +254,7 @@ function displayNewUserPrompt(){
     urlLabel = document.createElement("label");
     urlLabel.setAttribute("for", "url");
     urlLabel.id = "url-label";
-    urlLabel.appendChild(document.createTextNode("ICS URL"));
+    urlLabel.appendChild(document.createTextNode("URL da Agenda da Sala em .ICS"));
 
     urlInput = document.createElement("input");
     urlInput.type = "text";
@@ -265,7 +265,7 @@ function displayNewUserPrompt(){
     submitBTN = document.createElement("button");
     submitBTN.type = "button";
     submitBTN.setAttribute("onclick","submitFormNewUser();");
-    submitBTN.appendChild(document.createTextNode("Continue"));
+    submitBTN.appendChild(document.createTextNode("Salvar"));
 
     //form
     form = document.createElement("form");
