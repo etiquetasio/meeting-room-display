@@ -19,6 +19,6 @@
     ],
     "name": "etiquetas.io Meeting Rooms",
     "short_name": "etiquetas.io Meeting Rooms",
-    "scope": "/meeting-room-display/",
-    "start_url": "/meeting-room-display/index.html"
+    "scope": "/",
+    "start_url": "/index.html"
   }
