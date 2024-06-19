@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#7BC572">
     <meta name="description" content="Displays availabilty for meeting rooms and people">
-    <title>Meeting Room Display</title>
+    <title>etiquetas.io ESL Meeting Rooms</title>
 
     
     <link rel="stylesheet" href="css/style.css">
@@ -19,7 +19,7 @@
         <h1 id="name" class="name"></h1>
         <p id="nextBookingTime" class="nextBookingTime"></p>
         <img class="logo" src="" alt="">
-        <button onclick="localStorage.clear()">TEMP STORAGE CLEAR</button>
+        <button onclick="localStorage.clear()">Relinkar Agenda .ICS</button>
     </section>
     <section class="events">
         <h2 id="weekDay" class="weekDay"></h2>
@@ -37,7 +37,7 @@
             console.log("Service Worker Registered", registration)
         })
         .catch(function(err){
-            console.log("Service Worker Failed to Register", err)
+            console.log("Falha ao registrar o Service Worker", err)
         });
 </script>
 </html>
