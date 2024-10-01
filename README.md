@@ -46,7 +46,7 @@ For Google Calendar you can publish an ICS feed if you go to
 
 4. Dê um nome para a Sala e entre com a URL do seu feed ICS e pressione continuar, as informações da agenda deverão ser mostradas.
 
-    - If you used a proxy server to get around [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) issues use the link you get from it.
+    - Se você tiver problemas com CORS, adicione uma extensão https://chromewebstore.google.com/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino   , ou configure o seu WebServer para ignorar CORS.
 
 6. Você pode fazer o append do nome da sala diretamenta na URL de chamada  ?name=YourName&icsurl=YourICSURL. 
 
