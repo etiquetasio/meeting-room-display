@@ -36,16 +36,20 @@ For Google Calendar you can publish an ICS feed if you go to
 
 ## Instalação (Em desenvolvimento)
 
-1. Ethier use this github pages as is or fork this repository and publsih your fork as a webpage accessible form your hardware.
+1. Clone o repositório GIT, e hospede o código em um WebServer.
 
-    -  If forked or downloaded, customize your version with your branding!
+    -  Você pode analisar o código e customizar com sua marca !
 
-2. Share/Publish your calendar as a ics feed with a url that your hardware can access. (see [How to get ICAL/ICS feed from your calendar](#How-to-get-ICAL/ICS-feed-from-your-calendar))
+2. Compartilhe ou Publique o seu calendário em um feed ICS com uma URL que o seu hardware pode acessar. (ver [Como pegar um  ICAL/ICS feed do seu calendário](#How-to-get-ICAL/ICS-feed-from-your-calendar))
 
 3. On your hardware navigate to the public webpage and [download the PWA](https://support.google.com/chrome/answer/9658361?hl=en&co=GENIE.Platform%3DAndroid) ([on ios add it to homescreen](https://mobilesyrup.com/2020/05/24/how-install-progressive-web-app-pwa-android-ios-pc-mac/#:~:text=Navigate%20to%20the%20website%20you,like%20a%20native%20iOS%20app.)) 
 
-4. Enter room/screen name, and your ICS url on the webpage and press continue and the info should be displayed.
+4. Dê um nome para a Sala e entre com a URL do seu feed ICS e pressione continuar, as informações da agenda deverão ser mostradas.
+
     - If you used a proxy server to get around [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) issues use the link you get from it.
 
-5. You can also add the name and ics url into the url by appending ?name=YourName&icsurl=YourICSURL. This can be done for sharing links to your rooms calendar/availabilty
+6. Você pode fazer o append do nome da sala diretamenta na URL de chamada  ?name=YourName&icsurl=YourICSURL. 
+
+
+
 
