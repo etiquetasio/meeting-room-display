@@ -16,7 +16,7 @@ A agenda é linkada com um feed ical ICS de link público, dependendo da URL e o
 This largley depends on what calendar you are using. \
 (See "Supported calendars" for a list of calendar this PWA has been tested with)
 
-### Calendário do Outlookr
+### Calendário do Outlook
 Para o Outlook você pode publicar o feed ICS se você for em:
 - Settings (Cog up in the right corner), 
 - Todas as configuração dos calendários outlook, 
